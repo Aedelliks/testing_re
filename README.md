@@ -76,17 +76,22 @@ def extract_nadzor_info(text_content):
     # Pola: Lp, Nazwisko, Imiona, PESEL/DataUrodzenia
     # (Nr wpisu wprow i wykr są obecne, ale nie zawsze wypełnione dla PESEL)
     person_pattern_nadzor = re.compile(
-            r"(\d+)\s+"  # L.p. (grupa 1)
-            r"1\.Nazwisko\s+"
-            r"(\d+)\s+(\d+|-)\s+([\S ]+?)\s+"  # Nr wpisu wprow, wykr, Nazwisko (grupy 2,3,4)
-            r"2\.Imiona\s+"
-            r"(\d+)\s+(\d+|-)\s+([\S ]+?)\s+"  # Nr wpisu wprow, wykr, Imiona (grupy 5,6,7)
-            r"3\.Numer PESEL lub data urodzenia\s+"
-            r"(\d*)\s*(\d*|-)\s*([\S\s]*?)(?=\n\s*\d+\s+1\.Nazwisko|\n\s*Rubryka 3|\Z)",
-            # Nr wpisu wprow, wykr, PESEL/data (grupy 8,9,10)
-            re.DOTALL
-    )
-
+    r"(\d+)\s+"  # L.p. osoby (grupa 1)
+    r"1\.Nazwisko / Nazwa lub Firma\s+"
+    r"(\d*)\s*(\d*|-)\s*([\S ]+?)\s+"  # Nr wpisu wprow, wykr, Nazwisko (grupy 2, 3, 4)
+    r"2\.Imiona\s+"
+    r"(\d*)\s*(\d*|-)\s*([\S ]+?)\s+"  # Nr wpisu wprow, wykr, Imiona (grupy 5, 6, 7)
+    r"3\.Numer PESEL/REGON lub data\s+urodzenia\s+"
+    r"(\d*)\s*(\d*|-)\s*([\S\s]+?)\s+"  # Nr wpisu wprow, wykr, PESEL/data (grupy 8, 9, 10)
+    r"4\.Numer KRS\s+-\s+-\s+\*+\s+"
+    r"5\.Funkcja w organie\s+reprezentującym\s+"
+    # ZMODYFIKOWANA LINIA DLA FUNKCJI:
+    r"(\d*)\s*(\d*|-)\s*([\S\s]+?)\s*?(?=\n\s*6\.Czy osoba|\n\s*Strona \d+ z \d+)"  # Grupy 11, 12, 13: Funkcja
+    r"\s*6\.Czy osoba wchodząca w skład\s+zarządu została zawieszona w\s+czynnościach\?\s+"
+    r"(\d*)\s*(\d*|-)\s*(NIE|TAK)\s+"  # Nr wpisu wprow, wykr, Zawieszona (grupy 14, 15, 16)
+    r"7\.Data do jakiej została zawieszona\s+-\s+-\s+.*?\s*(?=(\n\s*\d+\s+1\.Nazwisko / Nazwa lub Firma|$))",
+    re.DOTALL
+)
     for match in person_pattern_nadzor.finditer(relevant_section):
         nazwisko_raw = match.group(4).strip()
         imiona_raw = match.group(7).strip()
