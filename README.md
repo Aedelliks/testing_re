@@ -22,20 +22,30 @@ def extract_zarzad_info(text_content):
     relevant_section = text_after_start[:end_match.start()] if end_match else text_after_start
 
     person_pattern = re.compile(
-            r"(\d+)\s+"  # L.p. osoby (grupa 1)
-            r"1\.Nazwisko / Nazwa lub Firma\s+"
-            r"(\d*)\s*(\d*|-)\s*([\S ]+?)\s+"  # Nr wpisu wprow, wykr, Nazwisko (grupy 2, 3, 4)
-            r"2\.Imiona\s+"
-            r"(\d*)\s*(\d*|-)\s*([\S ]+?)\s+"  # Nr wpisu wprow, wykr, Imiona (grupy 5, 6, 7)
-            r"3\.Numer PESEL/REGON lub data\s+urodzenia\s+"
-            r"(\d*)\s*(\d*|-)\s*([\S\s]+?)\s+"  # Nr wpisu wprow, wykr, PESEL/data (grupy 8, 9, 10)
-            r"4\.Numer KRS\s+-\s+-\s+\*+\s+"
-            r"5\.Funkcja w organie\s+reprezentującym\s+"
-            r"(\d*)\s*(\d*|-)\s*([\S\s]+?)\s+"  # Nr wpisu wprow, wykr, Funkcja (grupy 11, 12, 13)
-            r"6\.Czy osoba wchodząca w skład\s+zarządu została zawieszona w\s+czynnościach\?\s+"
-            r"(\d*)\s*(\d*|-)\s*(NIE|TAK)\s+"  # Nr wpisu wprow, wykr, Zawieszona (grupy 14, 15, 16)
-            r"7\.Data do jakiej została zawieszona\s+-\s+-\s+‑*\s*",  # Używamy ‑ (Unicode U+2011) lub - (ASCII hyphen)
-            re.DOTALL
+        r"(\d+)\s+"  # L.p. osoby (grupa 1)
+        r"1\.Nazwisko / Nazwa lub Firma\s+"
+        r"(\d*)\s*(\d*|-)\s*([\S ]+?)\s+"  # Nr wpisu wprow, wykr, Nazwisko (grupy 2, 3, 4)
+        r"2\.Imiona\s+"
+        r"(\d*)\s*(\d*|-)\s*([\S ]+?)\s+"  # Nr wpisu wprow, wykr, Imiona (grupy 5, 6, 7)
+        r"3\.Numer PESEL/REGON lub data\s+urodzenia\s+"
+        r"(\d*)\s*(\d*|-)\s*([\S\s]+?)\s+"  # Nr wpisu wprow, wykr, PESEL/data (grupy 8, 9, 10)
+        r"4\.Numer KRS\s+-\s+-\s+\*+\s+"
+        r"5\.Funkcja w organie\s+reprezentującym\s+"
+        r"(\d*)\s*(\d*|-)\s*"  # wprow, wykr for Funkcja (grupy 11, 12)
+        # Grupa 13 (Funkcja): Przechwytuje znaki jeden po drugim, dopóki nie napotka
+        # początku "Strona X z Y" lub początku "6.Czy osoba..."
+        # (?: ... )+ : Grupa nieprzechwytująca, powtórzona jeden lub więcej razy.
+        # (?! ... ) : Negatywne spojrzenie w przód (negative lookahead).
+        # [\S\s] : Dowolny znak (w tym nowa linia).
+        r"((?:(?!\s*Strona \d+ z \d+)(?!\s*6\.Czy osoba wchodząca w skład)[\S\s])+)"
+        # Po grupie 13 (Funkcja), dopasuj i zignoruj ewentualne linie "Strona..."
+        # oraz białe znaki, zanim przejdziesz do "6.Czy osoba..."
+        r"(?:\s*Strona \d+ z \d+)*\s*"  # Niewykorzystywana grupa dla "Strona...", zero lub więcej razy, plus białe znaki
+        # Następne pole
+        r"6\.Czy osoba wchodząca w skład\s+zarządu została zawieszona w\s+czynnościach\?\s+"
+        r"(\d*)\s*(\d*|-)\s*(NIE|TAK)\s+"  # Zawieszona (grupy 14, 15, 16)
+        r"7\.Data do jakiej została zawieszona\s+-\s+-\s+.*?\s*(?=(\n\s*\d+\s+1\.Nazwisko / Nazwa lub Firma|$))",
+        re.DOTALL
     )
 
     for match in person_pattern.finditer(relevant_section):
