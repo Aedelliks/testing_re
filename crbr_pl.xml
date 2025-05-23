@@ -1,24 +1,24 @@
 {
-    'IdentyfikatorWniosku': '5928C57CB6C346E299CACB60F2EAED63',
-    'DataICzasZlozeniaWniosku': datetime.datetime(2025, 5, 23, 12, 27, 24),
-    'DataICzasUdostepnieniaWniosku': datetime.datetime(2025, 5, 23, 12, 27, 24),
+    'IdentyfikatorWniosku': 'CCFF95508EFA45318791F076672A971D',
+    'DataICzasZlozeniaWniosku': datetime.datetime(2025, 5, 23, 13, 48, 34),
+    'DataICzasUdostepnieniaWniosku': datetime.datetime(2025, 5, 23, 13, 48, 34),
     'ListaInformacjiOSpolkachIBeneficjentach': {
         'SpolkaIBeneficjenci': [
             {
-                'Nazwa': 'FUNDACJA SPEAKLEASH',
-                'NIP': '8992990977',
-                'KRS': '0001099568',
-                'KodFormyOrganizacyjnej': '129',
-                'OpisFormyOrganizacyjnej': 'Fundacja',
-                'KodPocztowy': '50-561',
-                'Miejscowosc': 'WROCŁAW',
-                'Ulica': 'NIEMCZAŃSKA',
-                'NrDomu': '33',
+                'Nazwa': 'SOLUM VERBUM SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ SKA W LIKWIDACJI',
+                'NIP': '9512374903',
+                'KRS': '0000488998',
+                'KodFormyOrganizacyjnej': '121',
+                'OpisFormyOrganizacyjnej': 'Spółka komandytowo-akcyjna',
+                'KodPocztowy': '02-786',
+                'Miejscowosc': 'WARSZAWA',
+                'Ulica': 'JANA ROSOŁA',
+                'NrDomu': '10',
                 'NrLokalu': None,
                 'Teryt': {
-                    'Wojewodztwo': 'DOLNOŚLĄSKIE',
-                    'Powiat': 'WROCŁAW',
-                    'Gmina': 'WROCŁAW'
+                    'Wojewodztwo': 'MAZOWIECKIE',
+                    'Powiat': None,
+                    'Gmina': None
                 },
                 'Numer': None,
                 'InneDane': None,
@@ -26,10 +26,10 @@
                 'ListaBeneficjentowRzeczywistych': {
                     'BeneficjentRzeczywisty': [
                         {
-                            'PierwszeImie': 'IZABELA',
-                            'KolejneImiona': 'MARIA',
-                            'Nazwisko': 'BABIS',
-                            'PESEL': '85111916507',
+                            'PierwszeImie': 'IGOR',
+                            'KolejneImiona': 'ADAM',
+                            'Nazwisko': 'CHALUPEC',
+                            'PESEL': '66052900453',
                             'DataUrodzenia': None,
                             'Obywatelstwo': [
                                 {
@@ -48,282 +48,10 @@
                                         'UprawnieniaWlascicielskiePosrednie': None,
                                         'InneUprawnienia': {
                                             'RodzajInnychUprawnien': {
-                                                'Kod': '011',
-                                                'Opis': 'fundator'
+                                                'Kod': '000',
+                                                'Opis': 'inne stare – wartość wpisana w starej wersji formularza'
                                             },
-                                            'OpisInnychUprawnien': None
-                                        }
-                                    }
-                                ]
-                            },
-                            'NazwaBeneficjentaGrupowego': None,
-                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
-                        },
-                        {
-                            'PierwszeImie': 'JACEK',
-                            'KolejneImiona': None,
-                            'Nazwisko': 'CHWIŁA',
-                            'PESEL': '82071219138',
-                            'DataUrodzenia': None,
-                            'Obywatelstwo': [
-                                {
-                                    'Kod': 'PL',
-                                    'Nazwa': 'POLSKA'
-                                }
-                            ],
-                            'KrajZamieszkania': {
-                                'Kod': 'PL',
-                                'Nazwa': 'POLSKA'
-                            },
-                            'ListaInformacjiOUdzialach': {
-                                'InformacjaOUdzialach': [
-                                    {
-                                        'UprawnieniaWlascicielskieBezposrednie': None,
-                                        'UprawnieniaWlascicielskiePosrednie': None,
-                                        'InneUprawnienia': {
-                                            'RodzajInnychUprawnien': {
-                                                'Kod': '011',
-                                                'Opis': 'fundator'
-                                            },
-                                            'OpisInnychUprawnien': None
-                                        }
-                                    }
-                                ]
-                            },
-                            'NazwaBeneficjentaGrupowego': None,
-                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
-                        },
-                        {
-                            'PierwszeImie': 'ANDRZEJ',
-                            'KolejneImiona': None,
-                            'Nazwisko': 'CYBPROŃ',
-                            'PESEL': '89010811310',
-                            'DataUrodzenia': None,
-                            'Obywatelstwo': [
-                                {
-                                    'Kod': 'PL',
-                                    'Nazwa': 'POLSKA'
-                                }
-                            ],
-                            'KrajZamieszkania': {
-                                'Kod': 'PL',
-                                'Nazwa': 'POLSKA'
-                            },
-                            'ListaInformacjiOUdzialach': {
-                                'InformacjaOUdzialach': [
-                                    {
-                                        'UprawnieniaWlascicielskieBezposrednie': None,
-                                        'UprawnieniaWlascicielskiePosrednie': None,
-                                        'InneUprawnienia': {
-                                            'RodzajInnychUprawnien': {
-                                                'Kod': '011',
-                                                'Opis': 'fundator'
-                                            },
-                                            'OpisInnychUprawnien': None
-                                        }
-                                    }
-                                ]
-                            },
-                            'NazwaBeneficjentaGrupowego': None,
-                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
-                        },
-                        {
-                            'PierwszeImie': 'ADRIAN',
-                            'KolejneImiona': None,
-                            'Nazwisko': 'GWOŹDZIEJ',
-                            'PESEL': '93070112094',
-                            'DataUrodzenia': None,
-                            'Obywatelstwo': [
-                                {
-                                    'Kod': 'PL',
-                                    'Nazwa': 'POLSKA'
-                                }
-                            ],
-                            'KrajZamieszkania': {
-                                'Kod': 'PL',
-                                'Nazwa': 'POLSKA'
-                            },
-                            'ListaInformacjiOUdzialach': {
-                                'InformacjaOUdzialach': [
-                                    {
-                                        'UprawnieniaWlascicielskieBezposrednie': None,
-                                        'UprawnieniaWlascicielskiePosrednie': None,
-                                        'InneUprawnienia': {
-                                            'RodzajInnychUprawnien': {
-                                                'Kod': '011',
-                                                'Opis': 'fundator'
-                                            },
-                                            'OpisInnychUprawnien': None
-                                        }
-                                    }
-                                ]
-                            },
-                            'NazwaBeneficjentaGrupowego': None,
-                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
-                        },
-                        {
-                            'PierwszeImie': 'MARIA',
-                            'KolejneImiona': 'AGNIESZKA',
-                            'Nazwisko': 'FILIPKOWSKA',
-                            'PESEL': '82091700065',
-                            'DataUrodzenia': None,
-                            'Obywatelstwo': [
-                                {
-                                    'Kod': 'PL',
-                                    'Nazwa': 'POLSKA'
-                                }
-                            ],
-                            'KrajZamieszkania': {
-                                'Kod': 'PL',
-                                'Nazwa': 'POLSKA'
-                            },
-                            'ListaInformacjiOUdzialach': {
-                                'InformacjaOUdzialach': [
-                                    {
-                                        'UprawnieniaWlascicielskieBezposrednie': None,
-                                        'UprawnieniaWlascicielskiePosrednie': None,
-                                        'InneUprawnienia': {
-                                            'RodzajInnychUprawnien': {
-                                                'Kod': '011',
-                                                'Opis': 'fundator'
-                                            },
-                                            'OpisInnychUprawnien': None
-                                        }
-                                    }
-                                ]
-                            },
-                            'NazwaBeneficjentaGrupowego': None,
-                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
-                        },
-                        {
-                            'PierwszeImie': 'SEBASTIAN',
-                            'KolejneImiona': None,
-                            'Nazwisko': 'KONDRACKI',
-                            'PESEL': '74021815273',
-                            'DataUrodzenia': None,
-                            'Obywatelstwo': [
-                                {
-                                    'Kod': 'PL',
-                                    'Nazwa': 'POLSKA'
-                                }
-                            ],
-                            'KrajZamieszkania': {
-                                'Kod': 'PL',
-                                'Nazwa': 'POLSKA'
-                            },
-                            'ListaInformacjiOUdzialach': {
-                                'InformacjaOUdzialach': [
-                                    {
-                                        'UprawnieniaWlascicielskieBezposrednie': None,
-                                        'UprawnieniaWlascicielskiePosrednie': None,
-                                        'InneUprawnienia': {
-                                            'RodzajInnychUprawnien': {
-                                                'Kod': '011',
-                                                'Opis': 'fundator'
-                                            },
-                                            'OpisInnychUprawnien': None
-                                        }
-                                    }
-                                ]
-                            },
-                            'NazwaBeneficjentaGrupowego': None,
-                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
-                        },
-                        {
-                            'PierwszeImie': 'GRZEGORZ',
-                            'KolejneImiona': 'URBANOWICZ',
-                            'Nazwisko': 'URBANOWICZ',
-                            'PESEL': '84081717655',
-                            'DataUrodzenia': None,
-                            'Obywatelstwo': [
-                                {
-                                    'Kod': 'PL',
-                                    'Nazwa': 'POLSKA'
-                                }
-                            ],
-                            'KrajZamieszkania': {
-                                'Kod': 'PL',
-                                'Nazwa': 'POLSKA'
-                            },
-                            'ListaInformacjiOUdzialach': {
-                                'InformacjaOUdzialach': [
-                                    {
-                                        'UprawnieniaWlascicielskieBezposrednie': None,
-                                        'UprawnieniaWlascicielskiePosrednie': None,
-                                        'InneUprawnienia': {
-                                            'RodzajInnychUprawnien': {
-                                                'Kod': '011',
-                                                'Opis': 'fundator'
-                                            },
-                                            'OpisInnychUprawnien': None
-                                        }
-                                    }
-                                ]
-                            },
-                            'NazwaBeneficjentaGrupowego': None,
-                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
-                        },
-                        {
-                            'PierwszeImie': 'WALDEMAR',
-                            'KolejneImiona': 'PIOTR',
-                            'Nazwisko': 'BOSZKO',
-                            'PESEL': '72071101858',
-                            'DataUrodzenia': None,
-                            'Obywatelstwo': [
-                                {
-                                    'Kod': 'PL',
-                                    'Nazwa': 'POLSKA'
-                                }
-                            ],
-                            'KrajZamieszkania': {
-                                'Kod': 'PL',
-                                'Nazwa': 'POLSKA'
-                            },
-                            'ListaInformacjiOUdzialach': {
-                                'InformacjaOUdzialach': [
-                                    {
-                                        'UprawnieniaWlascicielskieBezposrednie': None,
-                                        'UprawnieniaWlascicielskiePosrednie': None,
-                                        'InneUprawnienia': {
-                                            'RodzajInnychUprawnien': {
-                                                'Kod': '011',
-                                                'Opis': 'fundator'
-                                            },
-                                            'OpisInnychUprawnien': None
-                                        }
-                                    }
-                                ]
-                            },
-                            'NazwaBeneficjentaGrupowego': None,
-                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
-                        },
-                        {
-                            'PierwszeImie': 'MATEUSZ',
-                            'KolejneImiona': 'JAN',
-                            'Nazwisko': 'KURAS',
-                            'PESEL': '95082908454',
-                            'DataUrodzenia': None,
-                            'Obywatelstwo': [
-                                {
-                                    'Kod': 'PL',
-                                    'Nazwa': 'POLSKA'
-                                }
-                            ],
-                            'KrajZamieszkania': {
-                                'Kod': 'PL',
-                                'Nazwa': 'POLSKA'
-                            },
-                            'ListaInformacjiOUdzialach': {
-                                'InformacjaOUdzialach': [
-                                    {
-                                        'UprawnieniaWlascicielskieBezposrednie': None,
-                                        'UprawnieniaWlascicielskiePosrednie': None,
-                                        'InneUprawnienia': {
-                                            'RodzajInnychUprawnien': {
-                                                'Kod': '011',
-                                                'Opis': 'fundator'
-                                            },
-                                            'OpisInnychUprawnien': None
+                                            'OpisInnychUprawnien': 'AKCJONARIUSZ SPÓŁKI I JEDNOCZEŚNIE 100% WSPÓLNIK KOMPLEMENTARIUSZA SPÓŁKI'
                                         }
                                     }
                                 ]
@@ -333,40 +61,472 @@
                         }
                     ]
                 },
-                'ListaZglaszajacych': {
-                    'Zglaszajacy': [
-                        {
-                            'PierwszeImie': 'IZABELA',
-                            'KolejneImiona': 'MARIA',
-                            'Nazwisko': 'BABIS',
-                            'PESEL': '85111916507',
-                            'DataUrodzenia': None,
-                            'Obywatelstwo': [
-                                {
-                                    'Kod': 'PL',
-                                    'Nazwa': 'POLSKA'
-                                }
-                            ],
-                            'KrajZamieszkania': {
-                                'Kod': 'PL',
-                                'Nazwa': 'POLSKA'
-                            },
-                            'InneInformacje': None,
-                            'ListaFunkcjiZglaszajacego': {
-                                'Funkcja': [
-                                    {
-                                        'Opis': 'zgłaszający - członek zarządu',
-                                        'Kod': '176'
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                },
+                'ListaZglaszajacych': None,
                 'DataPoczatkuPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
                 'DataKoncaPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
                 'Skorygowane': None,
-                'NumerReferencyjny': '7723c4b93cb010915bb3790a047c89e0',
+                'NumerReferencyjny': '86f7c0a028e4f3985bb3790a5a89651c',
+                'RejestrZagranicznyTrust': None,
+                'ListaInformacjiORozbieznosciach': None,
+                'Postepowanie': None
+            },
+            {
+                'Nazwa': 'EVENWOOD INVESTMENTS S A',
+                'NIP': '7010706225',
+                'KRS': '0000688332',
+                'KodFormyOrganizacyjnej': '116',
+                'OpisFormyOrganizacyjnej': 'Spółka akcyjna',
+                'KodPocztowy': '00-535',
+                'Miejscowosc': 'WARSZAWA',
+                'Ulica': 'PLAC TRZECH KRZYŻY',
+                'NrDomu': '3',
+                'NrLokalu': None,
+                'Teryt': {
+                    'Wojewodztwo': 'MAZOWIECKIE',
+                    'Powiat': None,
+                    'Gmina': None
+                },
+                'Numer': None,
+                'InneDane': None,
+                'Kraj': None,
+                'ListaBeneficjentowRzeczywistych': {
+                    'BeneficjentRzeczywisty': [
+                        {
+                            'PierwszeImie': 'IGOR',
+                            'KolejneImiona': 'ADAM',
+                            'Nazwisko': 'CHALUPEC',
+                            'PESEL': '66052900453',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': '100% WSPÓLNIK SPÓŁKI ICENTIS CAPITAL SP Z O.O., KTÓRA JEST JEDYNYM AKCJONARIUSZEM SPÓŁKI EVENWOOD INVESTEMENTS',
+                                        'InneUprawnienia': None
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        }
+                    ]
+                },
+                'ListaZglaszajacych': None,
+                'DataPoczatkuPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'DataKoncaPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'Skorygowane': None,
+                'NumerReferencyjny': 'a072f9e05b61f4985bb3790a75014f62',
+                'RejestrZagranicznyTrust': None,
+                'ListaInformacjiORozbieznosciach': None,
+                'Postepowanie': None
+            },
+            {
+                'Nazwa': 'EWANGELICKIE TOWARZYSTWO OŚWIATOWE',
+                'NIP': '5213508386',
+                'KRS': '0000313121',
+                'KodFormyOrganizacyjnej': '129',
+                'OpisFormyOrganizacyjnej': 'Fundacja',
+                'KodPocztowy': '02-786',
+                'Miejscowosc': 'WARSZAWA',
+                'Ulica': 'JANA ROSOŁA',
+                'NrDomu': '10',
+                'NrLokalu': None,
+                'Teryt': {
+                    'Wojewodztwo': 'MAZOWIECKIE',
+                    'Powiat': 'WARSZAWA',
+                    'Gmina': 'WARSZAWA'
+                },
+                'Numer': None,
+                'InneDane': None,
+                'Kraj': None,
+                'ListaBeneficjentowRzeczywistych': {
+                    'BeneficjentRzeczywisty': [
+                        {
+                            'PierwszeImie': 'IGOR',
+                            'KolejneImiona': 'ADAM',
+                            'Nazwisko': 'CHALUPEC',
+                            'PESEL': '66052900453',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '011',
+                                                'Opis': 'fundator'
+                                            },
+                                            'OpisInnychUprawnien': None
+                                        }
+                                    },
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '001',
+                                                'Opis': 'inna osoba fizyczna mająca wpływ na fundację'
+                                            },
+                                            'OpisInnychUprawnien': 'CZŁONEK RADY FUNDACJI'
+                                        }
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        }
+                    ]
+                },
+                'ListaZglaszajacych': None,
+                'DataPoczatkuPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'DataKoncaPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'Skorygowane': None,
+                'NumerReferencyjny': '6327b3f266e0e4be5bb3790a1e8f620e',
+                'RejestrZagranicznyTrust': None,
+                'ListaInformacjiORozbieznosciach': None,
+                'Postepowanie': None
+            },
+            {
+                'Nazwa': 'POLSKI ZWIĄZEK BRYDŻA SPORTOWEGO',
+                'NIP': '5251656918',
+                'KRS': '0000219753',
+                'KodFormyOrganizacyjnej': '128',
+                'OpisFormyOrganizacyjnej': 'Stowarzyszenie wpisane do KRS',
+                'KodPocztowy': '00-019',
+                'Miejscowosc': 'WARSZAWA',
+                'Ulica': 'ZŁOTA',
+                'NrDomu': '7',
+                'NrLokalu': '3',
+                'Teryt': {
+                    'Wojewodztwo': 'MAZOWIECKIE',
+                    'Powiat': 'WARSZAWA',
+                    'Gmina': 'WARSZAWA'
+                },
+                'Numer': None,
+                'InneDane': None,
+                'Kraj': None,
+                'ListaBeneficjentowRzeczywistych': {
+                    'BeneficjentRzeczywisty': [
+                        {
+                            'PierwszeImie': 'IGOR',
+                            'KolejneImiona': None,
+                            'Nazwisko': 'CHALUPEC',
+                            'PESEL': '66052900453',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '006',
+                                                'Opis': 'członek zarządu stowarzyszenia'
+                                            },
+                                            'OpisInnychUprawnien': None
+                                        }
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        }
+                    ]
+                },
+                'ListaZglaszajacych': None,
+                'DataPoczatkuPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'DataKoncaPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'Skorygowane': None,
+                'NumerReferencyjny': '9599c1bb3e0e8e755bb3790a66b98ea1',
+                'RejestrZagranicznyTrust': None,
+                'ListaInformacjiORozbieznosciach': None,
+                'Postepowanie': None
+            },
+            {
+                'Nazwa': 'FUNDACJA BRIDGE24.PL',
+                'NIP': '9512371158',
+                'KRS': '0000473788',
+                'KodFormyOrganizacyjnej': '129',
+                'OpisFormyOrganizacyjnej': 'Fundacja',
+                'KodPocztowy': '02-786',
+                'Miejscowosc': 'WARSZAWA',
+                'Ulica': 'ROSOŁA',
+                'NrDomu': '10',
+                'NrLokalu': None,
+                'Teryt': {
+                    'Wojewodztwo': 'MAZOWIECKIE',
+                    'Powiat': 'WARSZAWA',
+                    'Gmina': 'MOKOTÓW'
+                },
+                'Numer': None,
+                'InneDane': None,
+                'Kraj': None,
+                'ListaBeneficjentowRzeczywistych': {
+                    'BeneficjentRzeczywisty': [
+                        {
+                            'PierwszeImie': 'IGOR',
+                            'KolejneImiona': 'ADAM',
+                            'Nazwisko': 'CHALUPEC',
+                            'PESEL': '66052900453',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '011',
+                                                'Opis': 'fundator'
+                                            },
+                                            'OpisInnychUprawnien': None
+                                        }
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        }
+                    ]
+                },
+                'ListaZglaszajacych': None,
+                'DataPoczatkuPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'DataKoncaPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'Skorygowane': 'Zgłoszenie skorygowano w dniu 2024-10-24 10:49:44',
+                'NumerReferencyjny': 'bdb7aeb92844a3025a93790a29cb523a',
+                'RejestrZagranicznyTrust': None,
+                'ListaInformacjiORozbieznosciach': None,
+                'Postepowanie': None
+            },
+            {
+                'Nazwa': 'SOLUM VERBUM SP. Z O.O.',
+                'NIP': '5213641932',
+                'KRS': '0000443802',
+                'KodFormyOrganizacyjnej': '117',
+                'OpisFormyOrganizacyjnej': 'Spółka z ograniczoną odpowiedzialnością',
+                'KodPocztowy': '00-535',
+                'Miejscowosc': 'WARSZAWA',
+                'Ulica': 'PLAC TRZECH KRZYŻY',
+                'NrDomu': '3',
+                'NrLokalu': None,
+                'Teryt': {
+                    'Wojewodztwo': 'MAZOWIECKIE',
+                    'Powiat': 'WARSZAWA',
+                    'Gmina': 'WARSZAWA'
+                },
+                'Numer': None,
+                'InneDane': None,
+                'Kraj': None,
+                'ListaBeneficjentowRzeczywistych': {
+                    'BeneficjentRzeczywisty': [
+                        {
+                            'PierwszeImie': 'IGOR',
+                            'KolejneImiona': 'ADAM',
+                            'Nazwisko': 'CHALUPEC',
+                            'PESEL': '66052900453',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': {
+                                            'UprawnieniaWlascicielskie': {
+                                                'Kod': '006',
+                                                'Opis': 'wspólnik spółki z o.o.'
+                                            },
+                                            'JednostkaMiary': {
+                                                'Kod': '02',
+                                                'Opis': 'PLN'
+                                            },
+                                            'Ilosc': 150000.0,
+                                            'InformacjaOUprzywilejowaniu': {
+                                                'RodzajUprzywilejowania': [
+                                                    {
+                                                        'Kod': '06',
+                                                        'Opis': 'inne'
+                                                    }
+                                                ],
+                                                'OpisUprzywilejowania': 'INNE'
+                                            }
+                                        },
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': None
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        }
+                    ]
+                },
+                'ListaZglaszajacych': None,
+                'DataPoczatkuPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'DataKoncaPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'Skorygowane': None,
+                'NumerReferencyjny': 'aac4253c1eed73445b93790ab38caabd',
+                'RejestrZagranicznyTrust': None,
+                'ListaInformacjiORozbieznosciach': None,
+                'Postepowanie': None
+            },
+            {
+                'Nazwa': 'ICENTIS CAPITAL SP. Z O.O.',
+                'NIP': '5213508587',
+                'KRS': '0000320679',
+                'KodFormyOrganizacyjnej': '117',
+                'OpisFormyOrganizacyjnej': 'Spółka z ograniczoną odpowiedzialnością',
+                'KodPocztowy': '00-535',
+                'Miejscowosc': 'WARSZAWA',
+                'Ulica': 'PLAC TRZECH KRZYŻY',
+                'NrDomu': '3',
+                'NrLokalu': None,
+                'Teryt': {
+                    'Wojewodztwo': 'MAZOWIECKIE',
+                    'Powiat': 'WARSZAWA',
+                    'Gmina': 'WARSZAWA'
+                },
+                'Numer': None,
+                'InneDane': None,
+                'Kraj': None,
+                'ListaBeneficjentowRzeczywistych': {
+                    'BeneficjentRzeczywisty': [
+                        {
+                            'PierwszeImie': 'IGOR',
+                            'KolejneImiona': 'ADAM',
+                            'Nazwisko': 'CHALUPEC',
+                            'PESEL': '66052900453',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': {
+                                            'UprawnieniaWlascicielskie': {
+                                                'Kod': '006',
+                                                'Opis': 'wspólnik spółki z o.o.'
+                                            },
+                                            'JednostkaMiary': {
+                                                'Kod': '02',
+                                                'Opis': 'PLN'
+                                            },
+                                            'Ilosc': 598000.0,
+                                            'InformacjaOUprzywilejowaniu': {
+                                                'RodzajUprzywilejowania': [
+                                                    {
+                                                        'Kod': '99',
+                                                        'Opis': 'brak'
+                                                    }
+                                                ],
+                                                'OpisUprzywilejowania': None
+                                            }
+                                        },
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': None
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        },
+                        {
+                            'PierwszeImie': 'IGOR',
+                            'KolejneImiona': 'ADAM',
+                            'Nazwisko': 'CHALUPEC',
+                            'PESEL': '66052900453',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '001',
+                                                'Opis': 'inna osoba fizyczna'
+                                            },
+                                            'OpisInnychUprawnien': 'PREZES ZARZĄDU'
+                                        }
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        }
+                    ]
+                },
+                'ListaZglaszajacych': None,
+                'DataPoczatkuPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'DataKoncaPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'Skorygowane': 'Zgłoszenie skorygowano w dniu 2025-05-07 14:53:52',
+                'NumerReferencyjny': 'aacf457e58cd96fb5b93790ab2a935e8',
                 'RejestrZagranicznyTrust': None,
                 'ListaInformacjiORozbieznosciach': None,
                 'Postepowanie': None
@@ -374,8 +534,8 @@
         ]
     },
     'SzczegolyWniosku': {
-        'NIP': '8992990977',
-        'PESEL': None,
+        'NIP': None,
+        'PESEL': '66052900453',
         'KRS': None,
         'Nazwa': None,
         'DataUrodzenia': None,
@@ -385,5 +545,5 @@
         'DataDo': None
     },
     'Status': 'IstniejaInformacje',
-    'CelZapytania': 'BeneficjenciISpolki'
+    'CelZapytania': 'SpolkiWKtorychOsobaJestBeneficjentem'
 }
