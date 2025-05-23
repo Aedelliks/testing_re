@@ -3,12 +3,16 @@ import re
 
 
 def extract_zarzad_info(text_content):
+    """GLOWNA, DZIALAJACA FUNKCJA"""
     people_data = []
+
     # Wzorzec do znalezienia początku sekcji osób w zarządzie
     start_pattern = re.compile(
             r"Organ uprawniony do reprezentacji podmiotu\s+L\.p\.\s+Numer i nazwa pola\s+Nr "
             r"wpisu\s+Zawartość\s+wprow\s*\.\s*wykr\.\s*1\s+1\.Nazwa organu uprawnionego do\s+reprezentowania podmiotu\s+\d+\s+-\s+ZARZĄD BANKU\s+2\.Sposób reprezentacji podmiotu.*?Podrubryka 1\s+Dane osób wchodzących w skład organu",
-            re.DOTALL)
+            re.DOTALL
+    )
+
     # Wzorzec do znalezienia końca sekcji (początek Rubryki 2)
     end_pattern = re.compile(r"Organ nadzoru", re.DOTALL)
 
@@ -18,54 +22,63 @@ def extract_zarzad_info(text_content):
 
     text_after_start = text_content[start_match.end():]
     end_match = end_pattern.search(text_after_start)
-
     relevant_section = text_after_start[:end_match.start()] if end_match else text_after_start
 
-    person_pattern = re.compile(
-        r"(\d+)\s+"  # L.p. osoby (grupa 1)
-        r"1\.Nazwisko / Nazwa lub Firma\s+"
-        r"(\d*)\s*(\d*|-)\s*([\S ]+?)\s+"  # Nr wpisu wprow, wykr, Nazwisko (grupy 2, 3, 4)
-        r"2\.Imiona\s+"
-        r"(\d*)\s*(\d*|-)\s*([\S ]+?)\s+"  # Nr wpisu wprow, wykr, Imiona (grupy 5, 6, 7)
-        r"3\.Numer PESEL/REGON lub data\s+urodzenia\s+"
-        r"(\d*)\s*(\d*|-)\s*([\S\s]+?)\s+"  # Nr wpisu wprow, wykr, PESEL/data (grupy 8, 9, 10)
-        r"4\.Numer KRS\s+-\s+-\s+\*+\s+"
-        r"5\.Funkcja w organie\s+reprezentującym\s+"
-        r"(\d*)\s*(\d*|-)\s*"  # wprow, wykr for Funkcja (grupy 11, 12)
-        # Grupa 13 (Funkcja): Przechwytuje znaki jeden po drugim, dopóki nie napotka
-        # początku "Strona X z Y" lub początku "6.Czy osoba..."
-        # (?: ... )+ : Grupa nieprzechwytująca, powtórzona jeden lub więcej razy.
-        # (?! ... ) : Negatywne spojrzenie w przód (negative lookahead).
-        # [\S\s] : Dowolny znak (w tym nowa linia).
-        r"((?:(?!\s*Strona \d+ z \d+)(?!\s*6\.Czy osoba wchodząca w skład)[\S\s])+)"
-        # Po grupie 13 (Funkcja), dopasuj i zignoruj ewentualne linie "Strona..."
-        # oraz białe znaki, zanim przejdziesz do "6.Czy osoba..."
-        r"(?:\s*Strona \d+ z \d+)*\s*"  # Niewykorzystywana grupa dla "Strona...", zero lub więcej razy, plus białe znaki
-        # Następne pole
-        r"6\.Czy osoba wchodząca w skład\s+zarządu została zawieszona w\s+czynnościach\?\s+"
-        r"(\d*)\s*(\d*|-)\s*(NIE|TAK)\s+"  # Zawieszona (grupy 14, 15, 16)
-        r"7\.Data do jakiej została zawieszona\s+-\s+-\s+.*?\s*(?=(\n\s*\d+\s+1\.Nazwisko / Nazwa lub Firma|$))",
-        re.DOTALL
+    # Wzorzec do podziału na segmenty osób
+    person_segments_pattern = re.compile(
+            r"(\d+)\s+1\.Nazwisko / Nazwa lub Firma(.*?)(?=\d+\s+1\.Nazwisko / Nazwa lub Firma|$)",
+            re.DOTALL
     )
 
-    for match in person_pattern.finditer(relevant_section):
-        nazwisko_raw = match.group(4).strip()
-        imiona_raw = match.group(7).strip()
-        pesel_data_raw = match.group(10).strip().replace(", ------", "").strip()
-        funkcja_raw = match.group(13).strip()
-        zawieszona_raw = match.group(16).strip()
+    # Wzorce dla poszczególnych pól
+    patterns = {
+            'nazwisko': re.compile(r"(\d+)\s+(\d*|-)\s+(.*?)(?=\s+2\.Imiona)", re.DOTALL),
+            'imiona': re.compile(r"2\.Imiona\s+(\d+)\s+(\d*|-)\s+(.*?)(?=\s+3\.Numer PESEL)", re.DOTALL),
+            'pesel': re.compile(
+                r"3\.Numer PESEL/REGON lub data\s+urodzenia\s+(\d+)\s+(\d*|-)\s+(.*?)(?=\s+4\.Numer KRS)", re.DOTALL),
+            'funkcja': re.compile(
+                r"5\.Funkcja w organie\s+reprezentującym\s+(\d+)\s+(\d*|-)\s+(.*?)(?=\s+6\.Czy osoba)", re.DOTALL),
+            'zawieszona': re.compile(
+                r"6\.Czy osoba wchodząca w skład\s+zarządu została zawieszona w\s+czynnościach\?\s+(\d+)\s+(\d*|-)\s+(NIE|TAK)",
+                re.DOTALL)
+    }
 
-        person_dict = {
-                "Lp": match.group(1).strip(),
-                "Nazwisko": ' '.join(nazwisko_raw.split()),
-                "Imiona": ' '.join(imiona_raw.split()),
-                "PESEL_REGON_DataUrodzenia": pesel_data_raw,
-                "FunkcjaWOrganie": ' '.join(funkcja_raw.split()),
-                "CzyZawieszona": zawieszona_raw
-        }
+    for segment_match in person_segments_pattern.finditer(relevant_section):
+        lp = segment_match.group(1).strip()
+        segment_text = segment_match.group(2)
+
+        person_dict = {"Lp": lp, "Nazwisko": "", "Imiona": "", "PESEL_REGON_DataUrodzenia": "", "FunkcjaWOrganie": "",
+                       "CzyZawieszona": ""}
+
+        # Przetwarzanie nazwiska
+        if match := patterns['nazwisko'].search(segment_text):
+            raw = re.sub(r'Strona \d+ z \d+', '', match.group(3))
+            person_dict["Nazwisko"] = ' '.join(raw.strip().split())
+
+        # Przetwarzanie imion
+        if match := patterns['imiona'].search(segment_text):
+            raw = re.sub(r'Strona \d+ z \d+', '', match.group(3))
+            parts = re.split(r'\s*\d+\s*', raw)
+            person_dict["Imiona"] = ', '.join(filter(None, [p.strip() for p in parts]))
+
+        # Przetwarzanie PESEL/REGON
+        if match := patterns['pesel'].search(segment_text):
+            raw = re.sub(r',\s*[-–—]+\s*', '', match.group(3))
+            person_dict["PESEL_REGON_DataUrodzenia"] = ' '.join(raw.strip().split())
+
+        # Przetwarzanie funkcji
+        if match := patterns['funkcja'].search(segment_text):
+            raw = re.sub(r'Strona \d+ z \d+', '', match.group(3))
+            parts = re.split(r'\s*\d+\s*', raw)
+            person_dict["FunkcjaWOrganie"] = ', '.join(filter(None, [p.strip() for p in parts]))
+
+        # Przetwarzanie zawieszenia
+        if match := patterns['zawieszona'].search(segment_text):
+            person_dict["CzyZawieszona"] = match.group(3).strip()
+
         people_data.append(person_dict)
-    return people_data
 
+    return people_data
 
 def extract_nadzor_info(text_content):
     people_data = []
