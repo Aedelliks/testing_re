@@ -1,6 +1,23 @@
 import json
 import re
 
+def clean_text_with_regex(text: str) -> str:
+    # Usuń dokładne dopasowanie: "Strona xxx z xxx"
+    text = re.sub(r"Strona\s+\d{1,3}\s+z\s+\d{1,3}", "", text)
+
+    # Usuń pojedyncze słowa "Strona xxx"
+    text = re.sub(r"Strona\s+\d{1,3}", "", text)
+
+    # Usuń pojedyncze słowa "z xxx"
+    text = re.sub(r"\bz\s+\d{1,3}", "", text)
+
+    # Usuń znaki nowej linii i ich kombinacje
+    text = text.replace('\n', ' ').replace(' n', ' ').replace('n ', ' ')
+
+    # Redukuj wielokrotne spacje do jednej
+    text = re.sub(r'\s+', ' ', text)
+
+    return text.strip()
 
 def extract_zarzad_info(text_content):
     """GLOWNA, DZIALAJACA FUNKCJA"""
