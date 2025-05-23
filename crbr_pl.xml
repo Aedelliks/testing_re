@@ -1,0 +1,389 @@
+{
+    'IdentyfikatorWniosku': '5928C57CB6C346E299CACB60F2EAED63',
+    'DataICzasZlozeniaWniosku': datetime.datetime(2025, 5, 23, 12, 27, 24),
+    'DataICzasUdostepnieniaWniosku': datetime.datetime(2025, 5, 23, 12, 27, 24),
+    'ListaInformacjiOSpolkachIBeneficjentach': {
+        'SpolkaIBeneficjenci': [
+            {
+                'Nazwa': 'FUNDACJA SPEAKLEASH',
+                'NIP': '8992990977',
+                'KRS': '0001099568',
+                'KodFormyOrganizacyjnej': '129',
+                'OpisFormyOrganizacyjnej': 'Fundacja',
+                'KodPocztowy': '50-561',
+                'Miejscowosc': 'WROCŁAW',
+                'Ulica': 'NIEMCZAŃSKA',
+                'NrDomu': '33',
+                'NrLokalu': None,
+                'Teryt': {
+                    'Wojewodztwo': 'DOLNOŚLĄSKIE',
+                    'Powiat': 'WROCŁAW',
+                    'Gmina': 'WROCŁAW'
+                },
+                'Numer': None,
+                'InneDane': None,
+                'Kraj': None,
+                'ListaBeneficjentowRzeczywistych': {
+                    'BeneficjentRzeczywisty': [
+                        {
+                            'PierwszeImie': 'IZABELA',
+                            'KolejneImiona': 'MARIA',
+                            'Nazwisko': 'BABIS',
+                            'PESEL': '85111916507',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '011',
+                                                'Opis': 'fundator'
+                                            },
+                                            'OpisInnychUprawnien': None
+                                        }
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        },
+                        {
+                            'PierwszeImie': 'JACEK',
+                            'KolejneImiona': None,
+                            'Nazwisko': 'CHWIŁA',
+                            'PESEL': '82071219138',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '011',
+                                                'Opis': 'fundator'
+                                            },
+                                            'OpisInnychUprawnien': None
+                                        }
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        },
+                        {
+                            'PierwszeImie': 'ANDRZEJ',
+                            'KolejneImiona': None,
+                            'Nazwisko': 'CYBPROŃ',
+                            'PESEL': '89010811310',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '011',
+                                                'Opis': 'fundator'
+                                            },
+                                            'OpisInnychUprawnien': None
+                                        }
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        },
+                        {
+                            'PierwszeImie': 'ADRIAN',
+                            'KolejneImiona': None,
+                            'Nazwisko': 'GWOŹDZIEJ',
+                            'PESEL': '93070112094',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '011',
+                                                'Opis': 'fundator'
+                                            },
+                                            'OpisInnychUprawnien': None
+                                        }
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        },
+                        {
+                            'PierwszeImie': 'MARIA',
+                            'KolejneImiona': 'AGNIESZKA',
+                            'Nazwisko': 'FILIPKOWSKA',
+                            'PESEL': '82091700065',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '011',
+                                                'Opis': 'fundator'
+                                            },
+                                            'OpisInnychUprawnien': None
+                                        }
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        },
+                        {
+                            'PierwszeImie': 'SEBASTIAN',
+                            'KolejneImiona': None,
+                            'Nazwisko': 'KONDRACKI',
+                            'PESEL': '74021815273',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '011',
+                                                'Opis': 'fundator'
+                                            },
+                                            'OpisInnychUprawnien': None
+                                        }
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        },
+                        {
+                            'PierwszeImie': 'GRZEGORZ',
+                            'KolejneImiona': 'URBANOWICZ',
+                            'Nazwisko': 'URBANOWICZ',
+                            'PESEL': '84081717655',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '011',
+                                                'Opis': 'fundator'
+                                            },
+                                            'OpisInnychUprawnien': None
+                                        }
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        },
+                        {
+                            'PierwszeImie': 'WALDEMAR',
+                            'KolejneImiona': 'PIOTR',
+                            'Nazwisko': 'BOSZKO',
+                            'PESEL': '72071101858',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '011',
+                                                'Opis': 'fundator'
+                                            },
+                                            'OpisInnychUprawnien': None
+                                        }
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        },
+                        {
+                            'PierwszeImie': 'MATEUSZ',
+                            'KolejneImiona': 'JAN',
+                            'Nazwisko': 'KURAS',
+                            'PESEL': '95082908454',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'ListaInformacjiOUdzialach': {
+                                'InformacjaOUdzialach': [
+                                    {
+                                        'UprawnieniaWlascicielskieBezposrednie': None,
+                                        'UprawnieniaWlascicielskiePosrednie': None,
+                                        'InneUprawnienia': {
+                                            'RodzajInnychUprawnien': {
+                                                'Kod': '011',
+                                                'Opis': 'fundator'
+                                            },
+                                            'OpisInnychUprawnien': None
+                                        }
+                                    }
+                                ]
+                            },
+                            'NazwaBeneficjentaGrupowego': None,
+                            'InformacjeOUprawnieniachPrzyslugujacychBeneficjentowiGrupowemuTrust': None
+                        }
+                    ]
+                },
+                'ListaZglaszajacych': {
+                    'Zglaszajacy': [
+                        {
+                            'PierwszeImie': 'IZABELA',
+                            'KolejneImiona': 'MARIA',
+                            'Nazwisko': 'BABIS',
+                            'PESEL': '85111916507',
+                            'DataUrodzenia': None,
+                            'Obywatelstwo': [
+                                {
+                                    'Kod': 'PL',
+                                    'Nazwa': 'POLSKA'
+                                }
+                            ],
+                            'KrajZamieszkania': {
+                                'Kod': 'PL',
+                                'Nazwa': 'POLSKA'
+                            },
+                            'InneInformacje': None,
+                            'ListaFunkcjiZglaszajacego': {
+                                'Funkcja': [
+                                    {
+                                        'Opis': 'zgłaszający - członek zarządu',
+                                        'Kod': '176'
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                'DataPoczatkuPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'DataKoncaPrezentacjiZgloszenia': datetime.date(2025, 5, 23),
+                'Skorygowane': None,
+                'NumerReferencyjny': '7723c4b93cb010915bb3790a047c89e0',
+                'RejestrZagranicznyTrust': None,
+                'ListaInformacjiORozbieznosciach': None,
+                'Postepowanie': None
+            }
+        ]
+    },
+    'SzczegolyWniosku': {
+        'NIP': '8992990977',
+        'PESEL': None,
+        'KRS': None,
+        'Nazwa': None,
+        'DataUrodzenia': None,
+        'PierwszeImie': None,
+        'Nazwisko': None,
+        'DataOd': None,
+        'DataDo': None
+    },
+    'Status': 'IstniejaInformacje',
+    'CelZapytania': 'BeneficjenciISpolki'
+}
