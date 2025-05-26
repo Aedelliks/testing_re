@@ -1,6 +1,24 @@
 import json
 import re
 
+patterns = {
+    'nazwisko': re.compile(
+        r"\d+\s+1\.Nazwisko / Nazwa lub Firma\s+(?:\d+)?\s*(?:\d*|-)?\s*(.*?)(?=\s*2\.Imiona)", re.DOTALL),
+
+    'imiona': re.compile(
+        r"2\.Imiona\s+(?:\d+)?\s*(?:\d*|-)?\s*(.*?)(?=\s*3\.Numer PESEL)", re.DOTALL),
+
+    'pesel': re.compile(
+        r"3\.Numer PESEL/REGON lub data\s+urodzenia\s+(?:\d+)?\s*(?:\d*|-)?\s*(.*?)(?=\s*4\.Numer KRS)", re.DOTALL),
+
+    'funkcja': re.compile(
+        r"5\.Funkcja w organie\s+reprezentującym\s+(?:\d+)?\s*(?:\d*|-)?\s*(.*?)(?=\s*6\.Czy osoba)", re.DOTALL),
+
+    'zawieszona': re.compile(
+        r"6\.Czy osoba wchodząca w skład\s+zarządu została zawieszona w\s+czynnościach\?\s+(?:\d+)?\s*(?:\d*|-)?\s*(NIE|TAK)",
+        re.DOTALL)
+}
+
 def clean_text_with_regex(text: str) -> str:
     # Usuń dokładne dopasowanie: "Strona xxx z xxx"
     text = re.sub(r"Strona\s+\d{1,3}\s+z\s+\d{1,3}", "", text)
