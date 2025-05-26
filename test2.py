@@ -59,57 +59,58 @@ def extract_zarzad_info(text_content):
     end_match = end_pattern.search(text_after_start)
     relevant_section = text_after_start[:end_match.start()] if end_match else text_after_start
 
-    # Wzorzec do podziału na segmenty osób
+    # Podział na osoby (od "1.Nazwisko" do kolejnego lub końca)
     person_segments_pattern = re.compile(
-            r"(\d+)\s+1\.Nazwisko / Nazwa lub Firma(.*?)(?=\d+\s+1\.Nazwisko / Nazwa lub Firma|$)",
-            re.DOTALL
+        r"(\d+)\s*1\.Nazwisko / Nazwa lub Firma(.*?)(?=(\n\d+\s*1\.Nazwisko / Nazwa lub Firma|Rubryka 2|$))",
+        re.DOTALL
     )
 
-    # Wzorce dla poszczególnych pól
+    # Wzorce z opcjonalnymi numerami
     patterns = {
-            'nazwisko': re.compile(r"(\d+)\s+(\d*|-)\s+(.*?)(?=\s+2\.Imiona)", re.DOTALL),
-            'imiona': re.compile(r"2\.Imiona\s+(\d+)\s+(\d*|-)\s+(.*?)(?=\s+3\.Numer PESEL)", re.DOTALL),
-            'pesel': re.compile(
-                r"3\.Numer PESEL/REGON lub data\s+urodzenia\s+(\d+)\s+(\d*|-)\s+(.*?)(?=\s+4\.Numer KRS)", re.DOTALL),
-            'funkcja': re.compile(
-                r"5\.Funkcja w organie\s+reprezentującym\s+(\d+)\s+(\d*|-)\s+(.*?)(?=\s+6\.Czy osoba)", re.DOTALL),
-            'zawieszona': re.compile(
-                r"6\.Czy osoba wchodząca w skład\s+zarządu została zawieszona w\s+czynnościach\?\s+(\d+)\s+(\d*|-)\s+(NIE|TAK)",
-                re.DOTALL)
+        'nazwisko': re.compile(r"1\.Nazwisko / Nazwa lub Firma\s+(?:\d+)?\s*(?:\d*|-)?\s*(.*?)(?=\s*2\.Imiona)", re.DOTALL),
+        'imiona': re.compile(r"2\.Imiona\s+(?:\d+)?\s*(?:\d*|-)?\s*(.*?)(?=\s*3\.Numer PESEL)", re.DOTALL),
+        'pesel': re.compile(r"3\.Numer PESEL/REGON lub data\s+urodzenia\s+(?:\d+)?\s*(?:\d*|-)?\s*(.*?)(?=\s*4\.Numer KRS)", re.DOTALL),
+        'funkcja': re.compile(r"5\.Funkcja w organie\s+reprezentującym\s+(?:\d+)?\s*(?:\d*|-)?\s*(.*?)(?=\s*6\.Czy osoba)", re.DOTALL),
+        'zawieszona': re.compile(r"6\.Czy osoba wchodząca w skład\s+zarządu została zawieszona.*?\s+(?:\d+)?\s*(?:\d*|-)?\s*(NIE|TAK)", re.DOTALL),
     }
 
     for segment_match in person_segments_pattern.finditer(relevant_section):
         lp = segment_match.group(1).strip()
         segment_text = segment_match.group(2)
 
-        person_dict = {"Lp": lp, "Nazwisko": "", "Imiona": "", "PESEL_REGON_DataUrodzenia": "", "FunkcjaWOrganie": "",
-                       "CzyZawieszona": ""}
+        person_dict = {
+            "Lp": lp,
+            "Nazwisko": "",
+            "Imiona": "",
+            "PESEL_REGON_DataUrodzenia": "",
+            "FunkcjaWOrganie": "",
+            "CzyZawieszona": ""
+        }
 
-        # Przetwarzanie nazwiska
+        # Nazwisko
         if match := patterns['nazwisko'].search(segment_text):
-            raw = re.sub(r'Strona \d+ z \d+', '', match.group(3))
-            person_dict["Nazwisko"] = ' '.join(raw.strip().split())
+            person_dict["Nazwisko"] = ' '.join(match.group(1).strip().split())
 
-        # Przetwarzanie imion
+        # Imiona
         if match := patterns['imiona'].search(segment_text):
-            raw = re.sub(r'Strona \d+ z \d+', '', match.group(3))
+            raw = match.group(1)
             parts = re.split(r'\s*\d+\s*', raw)
             person_dict["Imiona"] = ', '.join(filter(None, [p.strip() for p in parts]))
 
-        # Przetwarzanie PESEL/REGON
+        # PESEL
         if match := patterns['pesel'].search(segment_text):
-            raw = re.sub(r',\s*[-–—]+\s*', '', match.group(3))
-            person_dict["PESEL_REGON_DataUrodzenia"] = ' '.join(raw.strip().split())
+            raw = match.group(1)
+            person_dict["PESEL_REGON_DataUrodzenia"] = re.sub(r",\s*[-–—]+\s*", "", raw).strip()
 
-        # Przetwarzanie funkcji
+        # Funkcja (może mieć kilka)
         if match := patterns['funkcja'].search(segment_text):
-            raw = re.sub(r'Strona \d+ z \d+', '', match.group(3))
+            raw = match.group(1)
             parts = re.split(r'\s*\d+\s*', raw)
             person_dict["FunkcjaWOrganie"] = ', '.join(filter(None, [p.strip() for p in parts]))
 
-        # Przetwarzanie zawieszenia
+        # Zawieszona
         if match := patterns['zawieszona'].search(segment_text):
-            person_dict["CzyZawieszona"] = match.group(3).strip()
+            person_dict["CzyZawieszona"] = match.group(1).strip()
 
         people_data.append(person_dict)
 
