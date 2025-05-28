@@ -1,6 +1,31 @@
 import re
 import json
 
+
+def clean_names_with_numbers(text):
+    """
+    Czyści tekst usuwając liczby pomiędzy imionami
+
+    Przykłady:
+    "PRZEMYSŁAW JAN 14 701 PRZEMYSŁAW LECH" -> "PRZEMYSŁAW JAN, PRZEMYSŁAW LECH"
+    "PRZEMYSŁAW JAN 133 70 PRZEMYSŁAW LECH" -> "PRZEMYSŁAW JAN, PRZEMYSŁAW LECH"
+    "PRZEMYSŁAW JAN 133 733 PRZEMYSŁAW LECH" -> "PRZEMYSŁAW JAN, PRZEMYSŁAW LECH"
+    """
+    if not text:
+        return ""
+
+    # Usuń "Strona X z Y" jeśli występuje
+    text = re.sub(r'\s*Strona \d+ z \d+\s*', ' ', text)
+
+    # Znajdź wszystkie fragmenty składające się z liter (polskie znaki też)
+    # Wzorzec: jedna lub więcej liter, następnie opcjonalnie spacja i kolejne litery
+    name_parts = re.findall(r'[A-ZĄĆĘŁŃÓŚŹŻ]+(?:\s+[A-ZĄĆĘŁŃÓŚŹŻ]+)*', text, re.IGNORECASE)
+
+    # Filtruj puste fragmenty i połącz przecinkami
+    clean_names = [name.strip() for name in name_parts if name.strip()]
+
+    return ', '.join(clean_names)
+
 def extract_zarzad_info(text_content):
     """GŁÓWNA FUNKCJA EKSTRAKCJI DANYCH ZARZĄDU"""
     people_data = []
