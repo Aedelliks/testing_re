@@ -53,35 +53,37 @@ def extract_zarzad_info(text_content):
     blocks = block_pattern.findall(relevant_section)
 
     # Oddzielne wzorce pól
-    field_patterns = {
-        "nazwisko": re.compile(
-            r"1\.Nazwisko\s*/\s*Nazwa\s*lub\s*Firma(?:.*\n){0,2}(?:\d+\s*\n)*"
-            r"(?:-\s*\n)*([A-ZĄĆĘŁŃÓŚŹŻ \-]+)"
-        ),
-        "imiona": re.compile(
-            r"2\.Imiona(?:.*\n){0,2}(?:\d+\s*\n)*"
-            r"(?:-\s*\n)*([A-ZĄĆĘŁŃÓŚŹŻ \-]+(?:\n(?:\d+\s*\n)*(?:-\s*\n)*[A-ZĄĆĘŁŃÓŚŹŻ \-]+)?)"
-        ),
-        "pesel": re.compile(
-            r"3\.Numer PESEL/REGON(?:.*\n){0,2}(?:\d+\s*\n)*"
-            r"(?:-\s*\n)*([0-9,\- ]{5,})"
-        ),
-        "krs": re.compile(
-            r"4\.Numer KRS(?:.*\n){0,2}(?:\d+\s*\n)*"
-            r"(?:-\s*\n)*([A-Z0-9\-\* ]+)?"
-        ),
-        "funkcja": re.compile(
-            r"5\.Funkcja(?:.*\n){0,2}(?:\d+\s*\n)*"
-            r"(?:-\s*\n)*([A-ZĄĆĘŁŃÓŚŹŻ ,\.\-]+"
-            r"(?:\n(?:\d+\s*\n)*(?:-\s*\n)*[A-ZĄĆĘŁŃÓŚŹŻ ,\.\-]+)*)"
-        ),
-        "zawieszona": re.compile(
-            r"6\.Czy osoba(?:.*\n){0,2}(?:\d+\s*\n)*(?:-\s*\n)*(TAK|NIE)"
-        ),
-        "data": re.compile(
-            r"7\.Data do jakiej(?:.*\n){0,2}(?:\d+\s*\n)*(?:-\s*\n)*([0-9\.\- ]{2,}|[-—])"
-        ),
-    }
+field_patterns = {
+    "nazwisko": re.compile(
+        r"1\.Nazwisko\s*/\s*Nazwa\s*lub\s*Firma(?:.*\n){0,2}(?:\d+\s*\n)*"
+        r"(?:-\s*\n)*([^\d\n]+)",  # dowolne litery (bez cyfr i nowej linii)
+        re.UNICODE
+    ),
+    "imiona": re.compile(
+        r"2\.Imiona(?:.*\n){0,2}(?:\d+\s*\n)*"
+        r"(?:-\s*\n)*([^\d\n]+(?:\n(?:\d+\s*\n)*(?:-\s*\n)*[^\d\n]+)?)",
+        re.UNICODE
+    ),
+    "pesel": re.compile(
+        r"3\.Numer PESEL/REGON(?:.*\n){0,2}(?:\d+\s*\n)*"
+        r"(?:-\s*\n)*([0-9,\- ]{5,})"
+    ),
+    "krs": re.compile(
+        r"4\.Numer KRS(?:.*\n){0,2}(?:\d+\s*\n)*"
+        r"(?:-\s*\n)*([A-Z0-9\-\* ]+)?"
+    ),
+    "funkcja": re.compile(
+        r"5\.Funkcja(?:.*\n){0,2}(?:\d+\s*\n)*"
+        r"(?:-\s*\n)*([^\d\n]+(?:\n(?:\d+\s*\n)*(?:-\s*\n)*[^\d\n]+)*)",
+        re.UNICODE
+    ),
+    "zawieszona": re.compile(
+        r"6\.Czy osoba(?:.*\n){0,2}(?:\d+\s*\n)*(?:-\s*\n)*(TAK|NIE)"
+    ),
+    "data": re.compile(
+        r"7\.Data do jakiej(?:.*\n){0,2}(?:\d+\s*\n)*(?:-\s*\n)*([0-9\.\- ]{2,}|[-—])"
+    ),
+}
 
     for i, block in enumerate(blocks, start=1):
         person_dict = {
