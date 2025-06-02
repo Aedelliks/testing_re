@@ -73,31 +73,7 @@ def infer_type(obj: Any) -> str:
     else:
         return type(obj).__name__
 
-# Przykład użycia:
-sample_data = {
-    "Organ uprawiony": [
-        {
-            "id": 1,
-            "nazwisko": "GADOMSKI",
-            "imiona": "MARCIN",
-            "pesel": "79031510174, ------",
-            "krs": "5",
-            "funkcja": "WICEPREZES ZARZĄDU BANKU",
-            "zawieszona": "Brak",
-            "data": "Brak"
-        },
-        {
-            "id": 6,
-            "nazwisko": "ZYGMANOWSKI",
-            "imiona": "MARCIN JANUSZ",
-            "pesel": "68100603633, ------",
-            "krs": "5",
-            "funkcja": "WICEPREZES ZARZĄDU BANKU",
-            "zawieszona": "Brak",
-            "data": "Brak"
-        }
-    ]
-}
+sample_data = None
 
 print(infer_type(sample_data))
 
