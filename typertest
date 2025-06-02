@@ -1,0 +1,36 @@
+from typing import Any
+
+def infer_type(obj: Any) -> str:
+    if obj is None:
+        return "None"
+    elif isinstance(obj, bool):
+        return "bool"
+    elif isinstance(obj, int):
+        return "int"
+    elif isinstance(obj, float):
+        return "float"
+    elif isinstance(obj, str):
+        return "str"
+    elif isinstance(obj, list):
+        if not obj:
+            return "list[Any]"
+        element_types = {infer_type(el) for el in obj}
+        joined_types = " | ".join(sorted(element_types))
+        return f"list[{joined_types}]"
+    elif isinstance(obj, tuple):
+        if not obj:
+            return "tuple[Any]"
+        element_types = [infer_type(el) for el in obj]
+        return f"tuple[{', '.join(element_types)}]"
+    elif isinstance(obj, dict):
+        if not obj:
+            return "dict[Any, Any]"
+        key_types = {infer_type(k) for k in obj.keys()}
+        value_types = {infer_type(v) for v in obj.values()}
+        keys_str = " | ".join(sorted(key_types))
+        values_str = " | ".join(sorted(value_types))
+        return f"dict[{keys_str}, {values_str}]"
+    else:
+        return type(obj).__name__
+sample_data = None
+print(infer_type(sample_data))
