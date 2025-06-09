@@ -4,10 +4,11 @@ def nested_dicts_to_markdown(dicts: list[dict]) -> str:
         for section, content in entry.items():
             lines.append(f"## {section.capitalize()}")
             if isinstance(content, list):
-                for item in content:
+                for i, item in enumerate(content, start=1):
+                    lines.append(f"### Pozycja {i}")
                     for key, value in item.items():
                         lines.append(f"- **{key}**: {value}")
-                    lines.append("")  # pusty wiersz między rekordami
+                    lines.append("")  # pusty wiersz
             elif isinstance(content, dict):
                 for key, value in content.items():
                     lines.append(f"- **{key}**: {value}")
