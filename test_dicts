@@ -1,0 +1,18 @@
+def nested_dicts_to_markdown(dicts: list[dict]) -> str:
+    lines = []
+    for entry in dicts:
+        for section, content in entry.items():
+            lines.append(f"## {section.capitalize()}")
+            if isinstance(content, list):
+                for item in content:
+                    for key, value in item.items():
+                        lines.append(f"- **{key}**: {value}")
+                    lines.append("")  # pusty wiersz między rekordami
+            elif isinstance(content, dict):
+                for key, value in content.items():
+                    lines.append(f"- **{key}**: {value}")
+                lines.append("")
+            else:
+                lines.append(f"- {content}")
+                lines.append("")
+    return "\n".join(lines)
