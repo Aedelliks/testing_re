@@ -17,3 +17,17 @@ def nested_dicts_to_markdown(dicts: list[dict]) -> str:
                 lines.append(f"- {content}")
                 lines.append("")
     return "\n".join(lines)
+
+
+def nested_dicts_to_markdown(data: dict) -> str:
+    lines = []
+    for section_name, entries in data.items():
+        lines.append(f"## {section_name}")
+        lines.append("")  # pusty wiersz po nagłówku sekcji
+        
+        for entry in entries:
+            for key, value in entry.items():
+                lines.append(f"- **{key}**: {value}")
+            lines.append("")  # pusty wiersz między wpisami
+        
+    return "\n".join(lines)
