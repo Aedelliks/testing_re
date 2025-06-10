@@ -61,3 +61,58 @@ def to_markdown(data, indent=0):
     # Łączymy linie i usuwamy ewentualne podwójne spacje
     result = "\n".join(lines).replace("\n\n\n", "\n\n")
     return result.strip()
+
+
+
+
+def to_markdown(data):
+    """
+    Uniwersalna funkcja konwertująca różne struktury danych na markdown.
+    
+    Obsługuje:
+    - słownik: {'key': 'value'}
+    - listę słowników: [{'key': 'value'}, {'key2': 'value2'}]
+    - zagnieżdżone słowniki: {'section': {'key': 'value'}}
+    - zagnieżdżone listy słowników: {'section': [{'key': 'value'}]}
+    """
+    lines = []
+    
+    # Jeśli to lista
+    if isinstance(data, list):
+        for item in data:
+            if isinstance(item, dict):
+                for key, value in item.items():
+                    lines.append(f"{key}: {value}")
+                lines.append("")
+        return "\n".join(lines)
+    
+    # Jeśli to słownik
+    if isinstance(data, dict):
+        for key, value in data.items():
+            # Wartość to lista słowników
+            if isinstance(value, list):
+                lines.append(f"{key}")
+                lines.append("")
+                for item in value:
+                    if isinstance(item, dict):
+                        for sub_key, sub_value in item.items():
+                            lines.append(f"{sub_key}: {sub_value}")
+                        lines.append("")
+            
+            # Wartość to słownik
+            elif isinstance(value, dict):
+                lines.append(f"{key}")
+                lines.append("")
+                for sub_key, sub_value in value.items():
+                    lines.append(f"{sub_key}: {sub_value}")
+                lines.append("")
+            
+            # Wartość to zwykła wartość
+            else:
+                lines.append(f"{key}: {value}")
+        
+        # Jeśli ostatnia linia nie jest pusta, dodaj pustą linię
+        if lines and lines[-1] != "":
+            lines.append("")
+    
+    return "\n".join(lines)
