@@ -31,3 +31,33 @@ def nested_dicts_to_markdown(data: dict) -> str:
             lines.append("")  # pusty wiersz między wpisami
         
     return "\n".join(lines)
+
+
+
+
+def to_markdown(data, indent=0):
+    lines = []
+    indent_str = "  " * indent  # Wcięcie dla zagnieżdżonych struktur
+    
+    if isinstance(data, dict):
+        for key, value in data.items():
+            if isinstance(value, (dict, list)):
+                lines.append(f"{indent_str}{key}:")
+                lines.append(to_markdown(value, indent + 1))
+            else:
+                lines.append(f"{indent_str}{key}: {value}")
+    elif isinstance(data, list):
+        for item in data:
+            if isinstance(item, (dict, list)):
+                lines.append(to_markdown(item, indent))
+            else:
+                lines.append(f"{indent_str}- {item}")
+            # Dodajemy pustą linię między elementami listy tylko na najwyższym poziomie
+            if indent == 0:
+                lines.append("")
+    else:
+        lines.append(f"{indent_str}{data}")
+    
+    # Łączymy linie i usuwamy ewentualne podwójne spacje
+    result = "\n".join(lines).replace("\n\n\n", "\n\n")
+    return result.strip()
