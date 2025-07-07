@@ -1,0 +1,18 @@
+from collections.abc import Mapping, MutableSequence
+
+def purge_none(obj):
+    """
+    Rekurencyjnie usuń wszystkie wartości None ze struktur
+    (słowniki, listy, krotki, sety). Zwraca NOWĄ, oczyszczoną strukturę.
+    """
+    if isinstance(obj, Mapping):
+        return {k: purge_none(v)
+                for k, v in obj.items()
+                if v is not None}
+    elif isinstance(obj, (list, tuple)):
+        cleaned = [purge_none(v) for v in obj if v is not None]
+        return type(obj)(cleaned)      # zachowaj oryginalny typ (list/tuple)
+    elif isinstance(obj, set):
+        return {purge_none(v) for v in obj if v is not None}
+    else:
+        return obj
